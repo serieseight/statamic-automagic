@@ -23,6 +23,7 @@ class AutomagicTags extends Tags
             ->map(function ($value, $key) {
                 return $this->prep($value, $key);
             })
+            ->filter()
             ->values();
 
         if (! $exclusions->contains('id')) {
@@ -38,6 +39,10 @@ class AutomagicTags extends Tags
 
     protected function prep($value, $key, $display = null)
     {
+        if ($this->getBool('remove_empty', false) && empty($value)) {
+            return null;
+        }
+
         $display = $display ?: Str::titleize(Str::deslugify($key));
 
         if ($asset = Asset::find($value)) {
