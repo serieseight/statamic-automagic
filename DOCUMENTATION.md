@@ -9,13 +9,19 @@
 Inside an email template, use the `{{ automagic }}` tag pair to loop over the available data
 from the submission.
 
-Available variables:
+#### Parameters
+
+| Name | Description | Example |
+|------|-------------|---------|
+| `exclude` | A pipe-delimited list of variables to exclude. | `{{ automagic exclude="name|email" }}` |
+
+#### Variables
 
 | Name | Description |
 |------|-------------|
-| **key** | Formset field key. |
-| **value** | Form submission value. |
-| **display** | A titlized version of the key for display purposes. |
+| `key` | Formset field key. |
+| `value` | Form submission value. |
+| `display` | A titlized version of the key for display purposes. |
 
 **Note**: The submission ID and Date are automatically appended.
 
