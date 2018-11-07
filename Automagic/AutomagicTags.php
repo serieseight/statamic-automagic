@@ -15,14 +15,23 @@ class AutomagicTags extends Tags
      */
     public function index()
     {
+        $exclusions = collect(['site_url', 'locale', 'now', 'today'])
+            ->merge(explode('|', $this->get('exclude', '')));
+
         $data = collect($this->context)
-            ->except(['site_url', 'id', 'locale', 'date', 'now', 'today'])
+            ->except($exclusions->merge(['id', 'date'])->unique()->toArray())
             ->map(function ($value, $key) {
                 return $this->prep($value, $key);
             })
-            ->values()
-            ->push($this->prep($this->context['id'], 'id', 'ID'))
-            ->push($this->prep($this->context['date'], 'date'));
+            ->values();
+
+        if (! $exclusions->contains('id')) {
+            $data->push($this->prep($this->context['id'], 'id', 'ID'));
+        }
+
+        if (! $exclusions->contains('date')) {
+            $data->push($this->prep($this->context['date'], 'date'));
+        }
 
         return $this->parseLoop($data);
     }
