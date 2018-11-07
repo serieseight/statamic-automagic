@@ -76,7 +76,7 @@ Date: November 7th, 2018
 
 ## Example Templates
 
-- [Basic](examples/basic.html)
-- [Full](examples/full.html)
+- [Basic](https://github.com/serieseight/statamic-automagic/blob/master/examples/basic.html)
+- [Full](https://github.com/serieseight/statamic-automagic/blob/master/examples/full.html)
 
 Full template based on [Postmark Transactional Email Templates](https://github.com/wildbit/postmark-templates).
