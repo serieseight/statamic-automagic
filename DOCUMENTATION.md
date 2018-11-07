@@ -17,6 +17,8 @@ Available variables:
 | **value** | Form submission value. |
 | **display** | A titlized version of the key for display purposes. |
 
+**Note**: The submission ID and Date are automatically appended.
+
 ## Example
 
 **Template**
@@ -49,6 +51,8 @@ Name: Michael Scott
 Company: Dunder Mifflin
 Position: Regional Manager
 Address: 1725 Slough Avenue, Scranton, PA
+ID: 1541603055.1894
+Date: November 7th, 2018
 ---
 <p>
   <strong>Name:</strong> Michael Scott
@@ -61,6 +65,12 @@ Address: 1725 Slough Avenue, Scranton, PA
 </p>
 <p>
   <strong>Address:</strong> 1725 Slough Avenue, Scranton, PA
+</p>
+<p>
+  <strong>ID:</strong> 1541603055.1894
+</p>
+<p>
+  <strong>Date:</strong> November 7th, 2018
 </p>
 ```
 
