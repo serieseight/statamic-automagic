@@ -13,7 +13,7 @@ from the submission.
 
 | Name | Description | Example |
 |------|-------------|---------|
-| `exclude` | A pipe-delimited list of variables to exclude. | `{{ automagic exclude="name|email" }}` |
+| `exclude` | A pipe-delimited list of variables to exclude. | `{{ automagic exclude="name\|email" }}` |
 
 #### Variables
 
