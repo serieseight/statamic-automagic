@@ -14,6 +14,7 @@ from the submission.
 | Name | Description | Example |
 |------|-------------|---------|
 | `exclude` | A pipe-delimited list of variables to exclude. | `{{ automagic exclude="name\|email" }}` |
+| `remove_empty` | Remove empty fields from being output. | `{{ automagic remove_empty="true" }}` |
 
 #### Variables
 

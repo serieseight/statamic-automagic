@@ -4,7 +4,7 @@ Hi {{ name }},
 
 Here's a copy of your form submission:
 
-{{ automagic exclude="name" }}
+{{ automagic exclude="name" remove_empty="true" }}
 {{ display }}: {{ value }}
 {{ /automagic }}
 
@@ -60,7 +60,7 @@ Automagic Example
                         <tr>
                           <td colspan="2" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; word-break: break-word;">
                             <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0" style="box-sizing: border-box; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; margin: 0; padding: 25px 0 0; width: 100%;">
-                              {{ automagic exclude="name" }}
+                              {{ automagic exclude="name" remove_empty="true" }}
                                 <tr style="padding-bottom: 10px;">
                                   <td width="20%" style="box-sizing: border-box; color: #74787E; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 15px; line-height: 18px; text-align: right; padding-right: 15px; word-break: break-word; vertical-align: top;">
                                     {{ display }}
