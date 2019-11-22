@@ -1,0 +1,3 @@
+fields:
+  remove_empty:
+    type: toggle
