@@ -45,10 +45,21 @@ class AutomagicTags extends Tags
 
         $display = $display ?: Str::titleize(Str::deslugify($key));
 
-        if ($asset = Asset::find($value)) {
-            $value = $asset->absoluteUrl();
-        }
+        $value = $this->prepValue($value);
 
         return compact('display', 'key', 'value');
+    }
+
+    protected function prepValue($value)
+    {
+        if (is_array($value)) {
+           return implode(', ', $value);
+        }
+
+        if ($asset = Asset::find($value)) {
+            return $asset->absoluteUrl();
+        }
+
+        return $value;
     }
 }
